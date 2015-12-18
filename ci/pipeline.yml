@@ -1,8 +1,8 @@
 resources:
-  - name: app-repo
+  - name: {{app-name}}
     type: git
     source:
-      uri: https://github.com/jamiemonserrate/sample_app_rails_4.git
+      uri: {{app-repo-url}}
       branch: master
 
   - name: teroku
@@ -14,7 +14,10 @@ resources:
 jobs:
   - name: test
     plan:
-      - get: app-repo
+      - get: {{app-name}}
       - get: teroku
       - task: test
         file: teroku/ci/test.yml
+        config:
+          params:
+            APP_DIR: {{app-name}}

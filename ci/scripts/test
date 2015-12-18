@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-sudo apt-get install nodejs
+sudo apt-get -y install nodejs
 
 cd app-repo
 

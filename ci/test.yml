@@ -1,7 +1,7 @@
 ---
 platform: linux
 
-image: docker:///rails
+image: docker:///cflondonservices/london-services-ci-base#stable
 
 inputs:
 - name: app-repo

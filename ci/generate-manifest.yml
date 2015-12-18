@@ -1,0 +1,14 @@
+---
+platform: linux
+
+image: docker:///cflondonservices/london-services-ci-base#stable
+
+inputs:
+- name: git-repository
+- name: teroku
+
+run:
+  path: teroku/ci/scripts/generate_manifest.rb
+
+params:
+  APP_NAME:

@@ -36,7 +36,12 @@ jobs:
         passed: [test]
         trigger: true
       - get: teroku
+      - task: generate-manifest
+        file: teroku/ci/generate-manifest.yml
+        config:
+          params:
+            APP_NAME: {{app-name}}
       - put: cf-deploy
         params:
-          manifest: teroku/ci/manifest.yml
-          path: git-repository
+          manifest: generate-manifest/generated-manifest.yml
+          path: generate-manifest/git-repository

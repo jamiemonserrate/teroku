@@ -5,6 +5,7 @@ image: docker:///ubuntu#14.04
 
 inputs:
 - name: app-repo
+- name: teroku
 
 run:
-  path: ci/scripts/test
+  path: teroku/ci/scripts/test

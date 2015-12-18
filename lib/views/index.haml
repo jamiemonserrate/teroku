@@ -1,0 +1,12 @@
+.container
+  %h1
+    Welcome to Teroku
+  %p
+    Please enter your github URL
+    %form{ :action => "/create-pipeline", :method => "post"}
+      %fieldset
+        %label{:for => "repo-name"} Name:
+        %input{:type => "text", :name => "repo-name", :class => "text"}
+        %label{:for => "repo-url"} URL:
+        %input{:type => "text", :name => "repo-url", :class => "text"}
+        %input{:type => "submit", :value => "Send", :class => "button"}

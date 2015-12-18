@@ -15,6 +15,7 @@ jobs:
   - name: test
     plan:
       - get: git-repository 
+        trigger: true
       - get: teroku
       - task: test
         file: teroku/ci/test.yml

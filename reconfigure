@@ -6,5 +6,8 @@ app_repo_url=$2
 fly set-pipeline \
     -c ci/pipeline.yml \
     --pipeline $app_name \
+    --non-interactive \
     --var "app-name=$app_name" \
     --var "app-repo-url=$app_repo_url"
+
+fly up -p $app_name

@@ -1,0 +1,7 @@
+---
+applications:
+- name: teroku
+  memory: 256M
+  instances: 1
+  path: .
+  command: bundle exec ruby lib/app.rb

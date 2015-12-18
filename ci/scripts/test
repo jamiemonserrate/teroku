@@ -10,4 +10,4 @@ fi
 
 bundle install --without production
 bundle exec rake db:migrate
-bundle exec rake spec
+bundle exec rake test

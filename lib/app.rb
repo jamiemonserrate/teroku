@@ -14,5 +14,5 @@ end
 
 post '/create-pipeline' do
   `./reconfigure #{params['repo-name']} #{params['repo-url']}`
-  "Hi #{params['repo-url']}"
+  redirect "http://192.168.100.4:8080/pipelines/#{params['repo-name']}"
 end

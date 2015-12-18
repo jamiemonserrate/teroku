@@ -11,6 +11,16 @@ resources:
       uri: https://github.com/jamiemonserrate/teroku.git
       branch: master
 
+  - name: cf-deploy
+    type: cf
+    source:
+      api: https://api.cfintegration-eu.cf-app.com
+      username: admin
+      password: {{cf-password}}
+      organization: teroku
+      space: teroku
+      skip_cert_check: true
+
 jobs:
   - name: test
     plan:
@@ -19,3 +29,14 @@ jobs:
       - get: teroku
       - task: test
         file: teroku/ci/test.yml
+
+  - name: deploy
+    plan:
+      - get: git-repository 
+        passed: [test]
+        trigger: true
+      - get: teroku
+      - put: cf-deploy
+        params:
+          manifest: teroku/ci/manifest.yml
+          path: git-repository

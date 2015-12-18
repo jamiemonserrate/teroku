@@ -8,6 +8,7 @@ fly set-pipeline \
     --pipeline $app_name \
     --non-interactive \
     --var "app-name=$app_name" \
-    --var "app-repo-url=$app_repo_url"
+    --var "app-repo-url=$app_repo_url" \
+    --var "cf-password=$CFPASSWORD"
 
 fly up -p $app_name

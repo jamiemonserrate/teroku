@@ -1,0 +1,6 @@
+---
+applications:
+- name: hardcoded
+  memory: 256M
+  instances: 1
+  path: .

@@ -5,3 +5,5 @@ applications:
   instances: 1
   command: bundle exec rake db:migrate && bundle exec rails s -p $PORT
   path: .
+  env: 
+    DATABASE_URL: postgres://pyjuesuj:L2Cjt5NbtiopxSpqMkuqqctcnqfRnkLO@pellefant.db.elephantsql.com:5432/pyjuesuj

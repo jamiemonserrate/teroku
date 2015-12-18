@@ -1,0 +1,13 @@
+resources:
+  - name: app-repo
+    type: git
+    source:
+      uri: https://github.com/railstutorial/sample_app_rails_4.git
+      branch: master
+
+jobs:
+  - name: test
+    plan:
+      - get: app-repo
+      - task: test
+        file: ci/test.yml

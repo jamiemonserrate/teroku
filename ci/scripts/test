@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd app-repo
+
+cp config/database.yml.example config/database.yml
+bundle install --without production
+bundle exec rake db:migrate
+bundle exec rake spec

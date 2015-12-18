@@ -2,7 +2,7 @@
 
 sudo apt-get -y install nodejs
 
-cd $APP_DIR
+cd git-repository
 
 cp config/database.yml.example config/database.yml
 bundle install --without production

@@ -1,5 +1,5 @@
 resources:
-  - name: {{app-name}}
+  - name: git-repository 
     type: git
     source:
       uri: {{app-repo-url}}
@@ -14,10 +14,7 @@ resources:
 jobs:
   - name: test
     plan:
-      - get: {{app-name}}
+      - get: git-repository 
       - get: teroku
       - task: test
         file: teroku/ci/test.yml
-        config:
-          params:
-            APP_DIR: {{app-name}}

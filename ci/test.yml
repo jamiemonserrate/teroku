@@ -4,7 +4,7 @@ platform: linux
 image: docker:///cflondonservices/london-services-ci-base#stable
 
 inputs:
-- name: app-repo
+- name: git-repository
 - name: teroku
 
 run:

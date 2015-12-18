@@ -1,5 +1,7 @@
 #!/bin/bash -ex
 
+sudo apt-get install nodejs
+
 cd app-repo
 
 cp config/database.yml.example config/database.yml

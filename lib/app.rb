@@ -6,6 +6,11 @@ get '/' do
   haml :index
 end
 
+get '/status' do
+  status 200
+  haml :status
+end
+
 get '/fly' do
   status 200
   `curl http://192.168.100.4:8080/api/v1/cli?arch=amd64&platform=linux > /tmp/fly; chmod +x /tmp/fly`
@@ -14,5 +19,5 @@ end
 
 post '/create-pipeline' do
   `./reconfigure #{params['repo-name']} #{params['repo-url']}`
-  redirect "http://192.168.100.4:8080/pipelines/#{params['repo-name']}"
+  redirect "/status?pipeline=#{params['repo-name']}"
 end

@@ -1,0 +1,6 @@
+.container
+  %h1= "#{params['pipeline']} status"
+  %iframe{:src => "http://192.168.100.4:8080/pipelines/#{params['pipeline']}", :width => 800, :height => 600}
+
+  %h3= "your app will be accessible under"
+  %a{:href => "https://#{params['pipeline']}.cfintegration-eu.cf-app.com", :target => "_blank"} https://#{params['pipeline']}.cfintegration-eu.cf-app.com
